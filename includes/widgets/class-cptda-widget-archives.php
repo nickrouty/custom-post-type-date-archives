@@ -32,6 +32,7 @@ class CPTDA_Widget_Archives extends WP_Widget {
 		$this->defaults = array(
 			'title'           => esc_attr__( 'Archives', 'custom-post-type-archives' ),
 			'limit'           => 10,
+            'offset'          => '',
 			'post_type'       => 'post',
 			'type'            => 'monthly',
 			'order'           => 'DESC',
@@ -131,6 +132,9 @@ class CPTDA_Widget_Archives extends WP_Widget {
 		/* Integers. */
 		$instance['limit'] = absint( $new_instance['limit'] );
 		$instance['limit'] = $instance['limit'] ? $instance['limit'] : 10;
+
+        $instance['offset'] = absint( $new_instance['offset'] );
+        $instance['offset'] = $instance['offset'] ? $instance['offset'] : 10;
 
 		/* Checkboxes. */
 		$instance['show_post_count'] = isset( $new_instance['show_post_count'] ) ? 1 : 0;
