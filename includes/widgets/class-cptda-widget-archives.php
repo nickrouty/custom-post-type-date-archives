@@ -134,7 +134,7 @@ class CPTDA_Widget_Archives extends WP_Widget {
 		$instance['limit'] = $instance['limit'] ? $instance['limit'] : 10;
 
         	$instance['offset'] = absint( $new_instance['offset'] );
-        	$instance['offset'] = $instance['offset'] ? $instance['offset'] : 10;
+        	$instance['offset'] = $instance['offset'] ? $instance['offset'] : '';
 
 		/* Checkboxes. */
 		$instance['show_post_count'] = isset( $new_instance['show_post_count'] ) ? 1 : 0;
