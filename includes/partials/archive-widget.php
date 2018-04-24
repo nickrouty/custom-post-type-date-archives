@@ -3,6 +3,9 @@
 </p>
 <p>
 	<label for="<?php echo $this->get_field_id( 'limit' ); ?>"><?php _e('Limit', 'custom-post-type-date-archives'); ?></label> <input type="number" class="smallfat code" size="5" min="0" id="<?php echo $this->get_field_id( 'limit' ); ?>" name="<?php echo $this->get_field_name( 'limit' ); ?>" value="<?php echo esc_attr( $instance['limit'] ); ?>" placeholder="10">
+</p>
+<p>
+    <label for="<?php echo $this->get_field_id( 'offset' ); ?>"><?php _e('Offset', 'custom-post-type-date-archives'); ?></label> <input type="number" class="smallfat code" size="5" min="0" id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" value="<?php echo esc_attr( $instance['offset'] ); ?>" placeholder="">
 </p><?php if ( $show_post_types ) : ?>
 <p>
 	<label for="<?php echo $this->get_field_id( 'post_type' ); ?>"><?php _e( 'Post Type:', 'custom-post-type-date-archives' ); ?></label> <select name="<?php echo $this->get_field_name( 'post_type' ); ?>" id="<?php echo $this->get_field_id( 'post_type' ); ?>" class="widefat">
