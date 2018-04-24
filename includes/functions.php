@@ -200,7 +200,7 @@ function cptda_get_archives( $args = '' ) {
 	global $wpdb, $wp_locale;
 
 	$defaults = array(
-		'type' => 'monthly', 'limit' => '',
+		'type' => 'monthly', 'limit' => '', 'offset' => '',
 		'format' => 'html', 'before' => '',
 		'after' => '', 'show_post_count' => false,
 		'echo' => 1, 'order' => 'DESC', 'post_type' => ''
@@ -225,8 +225,14 @@ function cptda_get_archives( $args = '' ) {
 	}
 
 	if ( ! empty( $r['limit'] ) ) {
-		$r['limit'] = absint( $r['limit'] );
-		$r['limit'] = ' LIMIT ' . $r['limit'];
+		if ( ! empty( $r['offset'] ) ) {
+            		$r['limit'] = absint( $r['limit'] );
+            		$r['offset'] = absint( $r['offset'] );
+            		$r['limit'] = ' LIMIT ' . $r['offset'] . ', ' . $r['limit'];
+		} else {
+			$r['limit'] = absint( $r['limit'] );
+			$r['limit'] = ' LIMIT ' . $r['limit'];
+		}
 	}
 
 	$order = strtoupper( $r['order'] );
